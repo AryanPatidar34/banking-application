@@ -19,17 +19,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 
 
+
 @RestController
 @RequestMapping("/api/accounts")
 public class AccountController {
 
   private final AccountRepository accountRepository;
   private Accountservice accountservice;
+ 
+
+  
+
+ 
 
   public AccountController(Accountservice accountservice, AccountRepository accountRepository) {
     super();
     this.accountservice = accountservice;
     this.accountRepository = accountRepository;
+    
   }
 
   @PostMapping // add acccount REST api
@@ -72,5 +79,9 @@ public ResponseEntity<String> deleteAccount(@PathVariable Long id){
      return ResponseEntity.ok("Account Deleted Successfully");
 
 }
+
+
+
+
 
 }
